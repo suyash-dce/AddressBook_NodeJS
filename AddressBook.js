@@ -111,3 +111,7 @@ class Contact {
     )
   );
   console.log(addressBook);
+
+addressBook.find((contact) => contact.firstName == "Harshit").firstName =
+  "Harsh";
+console.log(addressBook);
