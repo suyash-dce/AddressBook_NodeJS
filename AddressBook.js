@@ -206,3 +206,24 @@ function counter(count) {
   
   console.log("~~~~~"+person);
   console.log("~~~~"+searchByState(addressBook, "Delhi"));
+
+//UC9 View By City or State
+  function viewByCity(addressBook) {
+    let contactsByCity = new Map();
+    addressBook.filter((contact) =>
+      contactsByCity.set(contact.city, searchByCity(addressBook, contact.city))
+    );
+    return contactsByCity;
+  }
+  function viewByState(addressBook) {
+    let contactsByState = new Map();
+    addressBook.filter((contact) =>
+      contactsByState.set(
+        contact.state,
+        searchByState(addressBook, contact.state)
+      )
+    );
+    return contactsByState;
+  }
+  console.log(viewByCity(addressBook));
+  console.log(viewByState(addressBook));
