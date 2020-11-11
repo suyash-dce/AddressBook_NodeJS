@@ -97,3 +97,17 @@ class Contact {
       "suyash.jain@gmail.com"
     ),
   ];
+
+ addressBook.push(
+    new Contact(
+      "Harshit",
+      "Jain",
+      "Njf",
+      "New Delhi",
+      "Delhi",
+      "110043",
+      "8285683470",
+      "harshit.jain@gmail.com"
+    )
+  );
+  console.log(addressBook);
