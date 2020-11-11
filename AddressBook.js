@@ -115,3 +115,8 @@ class Contact {
 addressBook.find((contact) => contact.firstName == "Harshit").firstName =
   "Harsh";
 console.log(addressBook);
+
+//UC5 Delete Contact
+addressBook = addressBook.filter((contact) => contact.firstName !== "Suyash");
+console.log("UC5:Delete Contact");
+console.log(addressBook);
