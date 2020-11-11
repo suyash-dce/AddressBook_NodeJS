@@ -128,3 +128,68 @@ function counter(count) {
   numbersOfContact = addressBook.reduce(counter, 0);
   console.log("UC6:Contact Count");
   console.log("Number of contacts: " + numbersOfContact);
+
+//UC7 Delete Duplicate Contacts on the basis of First Name
+
+  //Add Duplicate Contact
+  addressBook.push(
+    new Contact(
+      "Harsh",
+      "Jain",
+      "Njf",
+      "New Delhi",
+      "Delhi",
+      "110043",
+      "8285683470",
+      "harshit.jain@gmail.com"
+    )
+  );
+
+ 
+  console.log("UC7: Don't allow duplicate contact while adding")
+
+  function addNewContact(addressBook, newContact) {
+    if (
+      addressBook.find(
+        (contact) =>
+          contact.firstName === newContact.firstName &&
+          contact.lastName === newContact.lastName
+      ) === undefined
+    )
+      addressBook.push(newContact);
+    else throw "Contact with same name already exists";
+  }
+
+  //Check for duplicate contact
+  let newContact = new Contact(
+    "Harsh",
+      "Jain",
+      "Njf",
+      "New Delhi",
+      "Delhi",
+      "110043",
+      "8285683470",
+      "harshit.jain@gmail.com"
+  );
+  try {
+    addNewContact(addressBook, newContact);
+  } catch (e) {
+    console.error(e);
+  }
+  //Check for new contact
+  let contact2=new Contact(
+    "Suyash",
+    "Jain",
+    "Najafgarh",
+    "New Delhi",
+    "Delhi",
+    "110043",
+    "9810224035",
+    "suyash.jain@gmail.com"
+  );
+  try {
+    addNewContact(addressBook, contact2);
+  } catch (e) {
+    console.error(e);
+  }
+  console.log(addressBook);
